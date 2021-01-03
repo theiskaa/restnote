@@ -40,7 +40,7 @@ class _AddNoteState extends State<AddNote> {
                   borderRadius: BorderRadius.circular(10),
                   onTap: () async {
                     if (_formKey.currentState.validate()) {
-                      bool result = await fireService.postNote(
+                       await fireService.postNote(
                         Note(
                           title: title,
                           description: description,

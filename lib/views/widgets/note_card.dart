@@ -5,7 +5,6 @@ import 'package:google_fonts/google_fonts.dart';
 class NoteCard extends StatelessWidget {
   final String title;
   final String description;
-
   final Function onTap;
 
   const NoteCard({

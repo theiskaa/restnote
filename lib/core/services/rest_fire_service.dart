@@ -21,10 +21,14 @@ class RestFireService {
             noteList.add(note);
           },
         );
-        return noteList;
+
+        if (noteList != null) {
+          return noteList;
+        } else
+          return [];
         break;
       default:
-        return Future.error(response.statusCode);
+        return [];
     }
   }
 
@@ -32,6 +36,19 @@ class RestFireService {
     var jsonBody = jsonEncode(note.toJson());
     final response =
         await http.post("$FIREBASE_API/notes.json", body: jsonBody);
+    switch (response.statusCode) {
+      case HttpStatus.ok:
+        return true;
+        break;
+      default:
+        return false;
+    }
+  }
+
+  Future deleteNote(Note note) async {
+    final response = await http.delete(
+      "$FIREBASE_API/notes/${note.key}.json",
+    );
     switch (response.statusCode) {
       case HttpStatus.ok:
         return true;
