@@ -2,12 +2,11 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:fckapi/core/models/note.dart';
-import 'package:fckapi/views/components/failed.dart';
 import 'package:http/http.dart' as http;
 
 class RestFireService {
   static const FIREBASE_API =
-      "https://rest-test-4e1e5-default-rtdb.firebaseio.com";
+      "[your firebase realtime database's url]";
 
   Future<List<Note>> fetchNotes() async {
     var response = await http.get("$FIREBASE_API/notes.json");

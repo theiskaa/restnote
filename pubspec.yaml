@@ -29,7 +29,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.1
   http: ^0.12.2
-  flutter_button:
+  flutter_button: ^0.0.3
   google_fonts: ^1.1.1
 
 dev_dependencies:
