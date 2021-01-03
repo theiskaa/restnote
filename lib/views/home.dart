@@ -46,7 +46,7 @@ class _HomeState extends State<Home> {
       builder: (context, snaphot) {
         switch (snaphot.connectionState) {
           case ConnectionState.done:
-            if (snaphot.hasData) {
+            if (snaphot.data != null) {
               return buildNoteList(snaphot);
             } else {
               return failed;

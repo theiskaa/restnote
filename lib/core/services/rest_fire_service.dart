@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:fckapi/core/models/note.dart';
+import 'package:fckapi/views/components/failed.dart';
 import 'package:http/http.dart' as http;
 
 class RestFireService {
@@ -14,18 +15,20 @@ class RestFireService {
       case HttpStatus.ok:
         var jsonBody = jsonDecode(response.body) as Map;
         var noteList = <Note>[];
-        jsonBody.forEach(
-          (key, value) {
-            var note = Note.fromJson(value);
-            note.key = key;
-            noteList.add(note);
-          },
-        );
 
-        if (noteList != null) {
+        if (jsonBody != null) {
+          jsonBody.forEach(
+            (key, value) {
+              var note = Note.fromJson(value);
+              note.key = key;
+              noteList.add(note);
+            },
+          );
+        } else {
           return noteList;
-        } else
-          return [];
+        }
+
+        return noteList;
         break;
       default:
         return [];
