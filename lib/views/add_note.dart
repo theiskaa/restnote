@@ -91,7 +91,7 @@ class _AddNoteState extends State<AddNote> {
         padding: const EdgeInsets.only(left: 20, bottom: 10),
         child: OpacityButton(
           child: Icon(Icons.arrow_back_ios, color: Colors.black),
-          onTap: () => Navigator.pop(context),
+          onTap: () => Navigator.pop(context, true),
           opacityValue: .3,
         ),
       ),

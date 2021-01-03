@@ -2,7 +2,7 @@ import 'package:fckapi/views/add_note.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_button/fabs/custom_fab.dart';
 
-AnimatedCustomFAB buildAnimatedCustomFAB(BuildContext context) {
+AnimatedCustomFAB buildAnimatedCustomFAB(Function onTap) {
   return AnimatedCustomFAB(
     child: Container(
       decoration: buildBoxDecoration(),
@@ -11,12 +11,7 @@ AnimatedCustomFAB buildAnimatedCustomFAB(BuildContext context) {
     backgroundColor: Colors.white,
     borderRadius: buildBorderRadius(),
     shadows: buildBoxShadows(),
-    onTap: () => Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => AddNote(),
-      ),
-    ),
+    onTap: onTap,
   );
 }
 

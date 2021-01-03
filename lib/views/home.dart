@@ -7,6 +7,7 @@ import 'package:fckapi/views/components/loading.dart';
 import 'package:fckapi/views/widgets/custom_appbar.dart';
 import 'package:fckapi/views/widgets/note_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_button/custom/opacity_button.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -25,9 +26,39 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: "Rest Note"),
+      appBar: buildCustomAppBar(),
       body: buildBody(),
-      floatingActionButton: buildAnimatedCustomFAB(context),
+      floatingActionButton: buildAnimatedCustomFAB(() async {
+        await Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => AddNote(),
+          ),
+        );
+        setState(() {});
+      }),
+    );
+  }
+
+  navigateToAddNoteScreen(BuildContext context) async {}
+
+  CustomAppBar buildCustomAppBar() {
+    return CustomAppBar(
+      title: "Rest Note",
+      leading: Padding(
+        padding: const EdgeInsets.only(left: 20, bottom: 10),
+        child: OpacityButton(
+          child: Icon(
+            Icons.refresh,
+            color: Colors.black,
+            size: 30,
+          ),
+          onTap: () {
+            setState(() {});
+          },
+          opacityValue: .3,
+        ),
+      ),
     );
   }
 
