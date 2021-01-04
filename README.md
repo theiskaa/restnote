@@ -5,8 +5,8 @@ A simple note application developed with rest api & firebase. and had a minimali
 
 ## Packages i use:
 
-[http: ^0.12.2](https://pub.dev/packages/http)
-[flutter_button: ^0.0.3](https://pub.dev/packages/flutter_button)
-[google_fonts: ^1.1.1](https://pub.dev/packages/google_fonts)
+- [http: ^0.12.2](https://pub.dev/packages/http)
+- [flutter_button: ^0.0.3](https://pub.dev/packages/flutter_button)
+- [google_fonts: ^1.1.1](https://pub.dev/packages/google_fonts)
 
 
