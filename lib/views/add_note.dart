@@ -75,7 +75,7 @@ class _AddNoteState extends State<AddNote> {
       hint: "Title",
       validation: (val) {
         if (val.length < 2) {
-          return "Title must to provide 2 charachter";
+          return "Title must to provide min 2 charachter";
         }
       },
       onChanged: (val) {

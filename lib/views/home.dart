@@ -43,11 +43,11 @@ class _HomeState extends State<Home> {
   FutureBuilder<List<Note>> buildBody() {
     return FutureBuilder<List<Note>>(
       future: fireService.fetchNotes(),
-      builder: (context, snaphot) {
-        switch (snaphot.connectionState) {
+      builder: (context, snapshot) {
+        switch (snapshot.connectionState) {
           case ConnectionState.done:
-            if (snaphot.data != null) {
-              return buildNoteList(snaphot);
+            if (snapshot.data != null) {
+              return buildNoteList(snapshot);
             } else {
               return failed;
             }
@@ -59,21 +59,21 @@ class _HomeState extends State<Home> {
     );
   }
 
-  Padding buildNoteList(AsyncSnapshot<List<Note>> snaphot) {
+  Padding buildNoteList(AsyncSnapshot<List<Note>> snapshot) {
     return Padding(
       padding: const EdgeInsets.all(10),
       child: ListView.builder(
-        itemCount: snaphot.data.length,
+        itemCount: snapshot.data.length,
         itemBuilder: (BuildContext context, int index) {
           return NoteCard(
-            title: snaphot.data[index].title,
-            description: snaphot.data[index].description,
+            title: snapshot.data[index].title,
+            description: snapshot.data[index].description,
             onTap: () async {
               await fireService.deleteNote(
                 Note(
-                  key: snaphot.data[index].key,
-                  title: snaphot.data[index].title,
-                  description: snaphot.data[index].description,
+                  key: snapshot.data[index].key,
+                  title: snapshot.data[index].title,
+                  description: snapshot.data[index].description,
                 ),
               );
               setState(() {});

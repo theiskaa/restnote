@@ -1,12 +1,12 @@
 import 'dart:convert';
 import 'dart:io';
-
 import 'package:fckapi/core/models/note.dart';
 import 'package:http/http.dart' as http;
 
 class RestFireService {
+  // TODO: Add your firebase realtime database's main url
   static const FIREBASE_API =
-      "[your firebase realtime database's url]";
+      "https://rest-test-4e1e5-default-rtdb.firebaseio.com";
 
   Future<List<Note>> fetchNotes() async {
     var response = await http.get("$FIREBASE_API/notes.json");
@@ -30,11 +30,11 @@ class RestFireService {
         return noteList;
         break;
       default:
-        return [];
+        return null;
     }
   }
 
-  Future postNote(Note note) async {
+  Future<bool> postNote(Note note) async {
     var jsonBody = jsonEncode(note.toJson());
     final response =
         await http.post("$FIREBASE_API/notes.json", body: jsonBody);
@@ -47,7 +47,7 @@ class RestFireService {
     }
   }
 
-  Future deleteNote(Note note) async {
+  Future<bool> deleteNote(Note note) async {
     final response = await http.delete(
       "$FIREBASE_API/notes/${note.key}.json",
     );
