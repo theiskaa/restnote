@@ -1,5 +1,6 @@
 import 'package:fckapi/core/models/note.dart';
 import 'package:fckapi/core/services/rest_fire_service.dart';
+import 'package:fckapi/core/validator.dart';
 import 'package:fckapi/views/widgets/custom_appbar.dart';
 import 'package:fckapi/views/widgets/custom_field.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +28,7 @@ class _AddNoteState extends State<AddNote> {
         child: Padding(
           padding: const EdgeInsets.all(10),
           child: Form(
-            key: _formKey, 
+            key: _formKey,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -40,7 +41,7 @@ class _AddNoteState extends State<AddNote> {
                   borderRadius: BorderRadius.circular(10),
                   onTap: () async {
                     if (_formKey.currentState.validate()) {
-                       await fireService.postNote(
+                      await fireService.postNote(
                         Note(
                           title: title,
                           description: description,
@@ -73,14 +74,8 @@ class _AddNoteState extends State<AddNote> {
   CustomField buildTitleField() {
     return CustomField(
       hint: "Title",
-      validation: (val) {
-        if (val.length < 2) {
-          return "Title must to provide min 2 charachter";
-        }
-      },
-      onChanged: (val) {
-        title = val;
-      },
+      validation: TitleFieldValidator.validate,
+      onChanged: (val) => title = val,
     );
   }
 

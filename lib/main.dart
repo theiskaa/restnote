@@ -1,5 +1,4 @@
-
-import 'package:fckapi/views/home.dart';
+import 'package:fckapi/views/screens/home.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());

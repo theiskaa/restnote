@@ -25,7 +25,6 @@ void main() {
       expect(response is List<Note>, true);
       expect(response != null, true);
       expect(response.length > 0, true);
-      print("Fire DB has: ${response.length} item");
       print(divider);
     },
   );

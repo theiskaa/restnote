@@ -1,6 +1,6 @@
 import 'package:fckapi/core/models/note.dart';
 import 'package:fckapi/core/services/rest_fire_service.dart';
-import 'package:fckapi/views/add_note.dart';
+import 'package:fckapi/views/screens/add_note.dart';
 import 'package:fckapi/views/components/animated_custom_fab.dart';
 import 'package:fckapi/views/components/failed.dart';
 import 'package:fckapi/views/components/loading.dart';
