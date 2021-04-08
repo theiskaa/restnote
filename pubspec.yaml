@@ -12,14 +12,11 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.1
-  flutter_button: ^0.0.4
   google_fonts: ^1.1.1
   http: ^0.12.2
 
 dev_dependencies:
   flutter_test:
-    sdk: flutter
-  integration_test:
     sdk: flutter
   mockito: ^4.1.3
 

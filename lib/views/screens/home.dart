@@ -6,8 +6,8 @@ import 'package:fckapi/views/components/failed.dart';
 import 'package:fckapi/views/components/loading.dart';
 import 'package:fckapi/views/widgets/custom_appbar.dart';
 import 'package:fckapi/views/widgets/note_card.dart';
+import 'package:fckapi/views/widgets/opacity_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_button/custom/opacity_button.dart';
 
 class Home extends StatefulWidget {
   @override

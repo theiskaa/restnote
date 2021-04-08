@@ -1,5 +1,6 @@
-import 'package:fckapi/core/validator.dart';
 import 'package:flutter_test/flutter_test.dart';
+
+import '../lib/core/validator.dart';
 
 void main() {
   TitleFieldValidator validator;

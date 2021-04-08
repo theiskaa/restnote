@@ -1,12 +1,11 @@
 import 'package:fckapi/core/models/note.dart';
 import 'package:fckapi/core/services/rest_fire_service.dart';
 import 'package:fckapi/core/validator.dart';
+import 'package:fckapi/views/widgets/animated_hover_button.dart';
 import 'package:fckapi/views/widgets/custom_appbar.dart';
 import 'package:fckapi/views/widgets/custom_field.dart';
+import 'package:fckapi/views/widgets/opacity_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_button/custom/hover_button.dart';
-import 'package:flutter_button/custom/opacity_button.dart';
-
 class AddNote extends StatefulWidget {
   const AddNote({Key key}) : super(key: key);
 

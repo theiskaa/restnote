@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_button/custom/opacity_button.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'opacity_widget.dart';
 
 class NoteCard extends StatelessWidget {
   final String title;
