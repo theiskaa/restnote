@@ -1,5 +1,5 @@
 # Rest Note
-**Complete Simple note application prepared with firebase rest api and mocking unit test.**
+**Complete Simple note application prepared with firebase rest api, unit test and mocking.**
 
 ## Overview
 <img src="https://github.com/theiskaa/restnote/blob/main/assets/overview.png" width="800">
